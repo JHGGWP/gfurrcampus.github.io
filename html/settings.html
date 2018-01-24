@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ResilientCampus : Settings</title>
+<link rel=icon href=../images/favicon.png>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="../js/base.js"></script>
+<script> var page = "settings"; </script>
+<script src="../js/building_data.js"></script>
+<table width="100%">
+	<tr>
+		<td width="1%" style="white-space:nowrap">
+			<div style="display:inline;"><img src="../images/image0.png"></div>
+			<div style="display:inline; white-space:nowrap;font-family: Verdana, Helvetica, sans-serif;position:relative;top:25px;">Data Visualization & Management Tool
+				<i ng-show ="signedInRole.isguest" style="color:#00ace6" class="fa fa-address-card-o" aria-hidden="true"></i>
+				<i ng-show = "signedInRole.isadmin" style="color:#00cc66" class="fa fa-id-card-o" aria-hidden="true"></i>
+				<i ng-show = "signedInRole.ismaster" ng-show ="isguest" style="color:black" class="fa fa-id-card" aria-hidden="true"></i>
+			</div>
+		</td>
+		<td align="right">
+			<i class="fa fa-sign-in" data-toggle="modal" data-target="#loginModal"></i><br>
+			<i class="fa fa-sign-out" data-toggle="modal" data-target="#logoutModal"></i><br>
+			<i class="fa fa-edit" data-toggle="modal" data-target="#signupModal"></i><br>
+			<i class="fa fa-question-circle" data-toggle="modal" data-target="#helpModal"></i>
+		</td>
+		<td width="10px"></td>
+	</tr>
+</table>
+
+<table width="100%" style="font-family: Verdana, Helvetica, sans-serif;">
+	<tr>
+		<td width="10px"></td>
+		<td align="left" width="13%">
+			<a href="../index.html" style="text-decoration: none;color:black;"> &nbsp; &nbsp; &nbsp;<i class="fa fa-home"></i>
+			Home</a>
+		</td>
+		<td align="left" width="13%">
+			<a href="../html/about.html" style="text-decoration: none;color:black;"> <i class="fa fa-user-circle-o"></i>
+			About</a>
+		</td>
+		<td align="left" width="13%">
+			<a href="../html/data.html" style="text-decoration: none;color:black;"> <i class="fa fa-database"></i> Data</a>
+		</td>
+		<td align="left" width="14%">
+			<a href="../html/charts.html" style="text-decoration: none;color:black;"> <i class="fa fa-pie-chart"></i>
+			Charts</a>
+		</td>
+		<td align="left" width="18%">
+			<a href="../html/parts.html" style="text-decoration: none;color:black;"> <i class="fa fa-users"></i>
+			Participants</a>
+		</td>
+		<td align="left" width="14%">
+			<a href="../html/settings.html" style="text-decoration: none;color:black;opacity:0.5;"> <i class="fa fa-gears"></i>
+			Settings</a>
+		</td>
+		<td align="left" width="14%">
+			<a href="../html/contact.html" style="text-decoration: none;color:black;"> <i class="fa fa-commenting"></i>
+			Contact Us</a>
+		</td>
+		<td width="10px"></td>
+	</tr>
+</table>
+<hr style="margin:5px;">
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+<div>
+	<br>
+	<table align="center" width="80%">
+		<tr>
+			<td style="font-family: Verdana, Helvetica, sans-serif; font-size: 24px;" align="center"> <i class="fa fa-gears" aria-hidden="true"></i> &nbsp; Settings &nbsp; <i class="fa fa-gears" aria-hidden="true"></i>
+			</td>
+		</tr>
+		<tr>
+			<td style="font-family: Verdana, Helvetica, sans-serif;" align="center"><p><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus leo, consequat vitae orci vel, vulputate dictum dui. Etiam nec erat varius, aliquam massa vitae, dignissim erat. Nunc posuere odio quis diam posuere cursus. Proin a pellentesque ante, mattis luctus nisl. Curabitur leo justo, pharetra et leo at, iaculis consectetur mi. Maecenas faucibus semper lacus eu congue. Fusce non elit accumsan, euismod sapien et, fringilla lectus. Aenean at sagittis sem. Nullam porttitor, leo non rutrum mollis, turpis erat iaculis risus, at suscipit nunc est eget leo. Aliquam scelerisque turpis sed odio efficitur imperdiet sed eu enim. Vestibulum rutrum at elit sed convallis.</p>
+			</td>
+		</tr>
+	</table>
+	<hr>
+	<h2 style="font-family: Verdana, Helvetica, sans-serif; font-size: 24px;" align="center"> &nbsp; Profile Settings &nbsp; </h2>
+	<table align="center" width="85%">
+		<tr>
+			<th width="80%" colspan="4">
+				<div class="btn-group btn-group-justified">
+  					<a href="#" class="btn btn-primary" style="width:15%"><b>Action</b></a>
+  					<a href="#" class="btn btn-primary" style="width:15%"><b>Current</b></a>
+  					<a href="#" class="btn btn-primary" style="width:55%"><b>New</b></a>
+  					<a href="#" class="btn btn-primary" style="width:15%"><b>Submission</b>s</a>
+				</div>
+			</th>
+		</tr>
+		<tr>
+			<th style="width:15%;text-align: center;">Request Role Change:</th>
+			<th style="width:15%;text-align: center;" align="center">[Guest]</th>
+			<td style="width:55%;text-align: center;">
+				<form>
+					<label>Choose Option:  &nbsp;</label>
+    				<label class="radio-inline">
+      					<input type="radio" name="optradio">Master
+    				</label>
+    				<label class="radio-inline">
+      					<input type="radio" name="optradio">Administrator
+    				</label>
+    				<label class="radio-inline">
+      					<input type="radio" name="optradio">Guest
+    				</label>
+  				</form>
+			</td>
+			<td style="width:15%;text-align: center; padding:5px;"><button class="btn btn-danger btn-sm" style="width:100%">Send</button></td>
+		</tr>
+		<tr>
+			<th style="width:15%;text-align: center;">Change Username:</th>
+			<th style="width:15%;text-align: center;" align="center">(username)</th>
+			<td style="width:55%;text-align: center;"><input style="width:99%" placeholder="Enter New Username..."></input></td>
+			<td style="width:15%;text-align: center; padding:5px;"><button class="btn btn-danger btn-sm" style="width:100%">Change</button></td>
+		</tr>
+		<tr>
+			<th style="width:15%;text-align: center;">Change Password:</th>
+			<th style="width:15%;text-align: center;" align="center">*********</th>
+			<td style="width:55%;text-align: center;"><input style="width:99%" placeholder="Enter New Password..."></input></td>
+			<td style="width:15%;text-align: center; padding:5px;"><button class="btn btn-danger btn-sm" style="width:100%">Change</button></td>
+		</tr>
+		<tr>
+			<th style="width:15%;text-align: center;">Deactivate Account:</th>
+			<th style="width:15%;text-align: center;" align="center">(email)</th>
+			<td style="width:55%;text-align: center;"><input style="width:99%" placeholder="Enter Current Password..."></input></td>
+			<td style="width:15%;text-align: center; padding:5px;"><button class="btn btn-danger btn-sm" style="width:100%">Change</button></td>
+		</tr>
+	</table>
+	<hr>
+	<h2 style="font-family: Verdana, Helvetica, sans-serif; font-size: 24px;" align="center"> &nbsp; User Management &nbsp; </h2>
+	<table align="center" width="85%">
+		<tr>
+			<th width="75%">
+				<div class="btn-group btn-group-justified">
+  					<a href="#" class="btn btn-primary" style="width:13%">Users</a>
+  					<a href="#" class="btn btn-primary" style="width:20%">Name</a>
+  					<a href="#" class="btn btn-primary" style="width:25%">Role</a>
+  					<a href="#" class="btn btn-primary" style="width:25%">Requested</a>
+  					<a href="#" class="btn btn-primary" style="width:5%">M</a>
+  					<a href="#" class="btn btn-primary" style="width:5%">A</a>
+  					<a href="#" class="btn btn-primary" style="width:5%">G</a>
+  					<a href="#" class="btn btn-primary" style="width:5%"><i class="fa fa-trash" aria-hidden="true"></i></a>
+				</div>
+			</th>
+		</tr>
+		<tr ng-repeat="x in users">
+			<td width="75%">
+				<div class="btn-group btn-group-justified">
+  					<a href="#" class="btn btn-default" style="width:13%"><b>{{userID(x)}}</b></a>
+  					<a href="#" class="btn btn-default" style="width:20%"><b>{{x.name}}</b></a>
+  					<a href="#" class="btn btn-default" style="width:25%">{{x.currentRole}}</a>
+  					<a href="#" class="btn btn-default" style="width:25%">{{x.requested}}</a>
+  					<a href="#" class="btn btn-default" style="width:5%">3</a>
+  					<a href="#" class="btn btn-default" style="width:5%">2</a>
+  					<a href="#" class="btn btn-default" style="width:5%">1</a>
+  					<a href="#" class="btn btn-danger" style="width:5%"><i class="fa fa-times" aria-hidden="true"></i></a>
+				</div>
+			</td>
+		</tr>
+	</table>
+	<hr>
+	<h2 style="font-family: Verdana, Helvetica, sans-serif; font-size: 24px;" align="center"> &nbsp; Questions/Complaints &nbsp; </h2>
+	<table align="center" width="85%">
+		<tr>
+			<th width="75%">
+				<div class="btn-group btn-group-justified">
+  					<a href="#" class="btn btn-primary" style="width:13%">User</a>
+  					<a href="#" class="btn btn-primary" style="width:85%">Question/Complaint</a>
+  					<a href="#" class="btn btn-primary" style="width:5%"><i class="fa fa-trash" aria-hidden="true"></i></a>
+  				</div>
+  			</th>
+		</tr>
+		<tr>
+			<th width="75%" ng-repeat="x in questions">
+				<div class="btn-group btn-group-justified">
+  					<a href="#" class="btn btn-default" style="width:13%"><b>{{userID(x)}}</b></a>
+  					<a href="#" class="btn btn-default" style="width:85%">{{x.question}}</a>
+  					<a href="#" class="btn btn-danger" style="width:5%"><i class="fa fa-times" aria-hidden="true"></i></a>
+  				</div>
+  			</th>
+		</tr>
+	</table>
+	<hr>
+	<h2 style="font-family: Verdana, Helvetica, sans-serif; font-size: 24px;" align="center"> &nbsp; Data Management &nbsp; </h2>
+	<table align="center" width="85%">
+		<tr>
+			<th width="80%" colspan="4">
+				<div class="btn-group btn-group-justified">
+  					<a href="#" class="btn btn-primary" style="width:15%"><b>Create Backup</b></a>
+  					<a href="#" class="btn btn-info" style="width:15%"><b>View Last Backup</b></a>
+  					<a href="#" class="btn btn-success" style="width:15%"><b>View Full Backup</b></a>
+  					<a href="#" class="btn btn-warning" style="width:15%"><b>Clear Last Backup</b></a>
+  					<a href="#" class="btn btn-danger" style="width:15%"><b>Clear All Data</b></a>
+				</div>
+			</th>
+		</tr>
+		<tr>
+			<th width="80%" colspan="4">
+				<textarea style="width:100%;text-align: center;padding:100px;" placeholder="..."></textarea>
+			</th>
+		</tr>
+	</table>
+	<hr>
+	<a href="https://github.com/gfurr-campus/resilience" target="_blank"><h2 style="font-family: Verdana, Helvetica, sans-serif; font-size: 24px;" align="center"> Repository </h2></a>
+	<br>
+</div>
+
+  <br><br>
+</body>
+<footer class="footer" style="background-color:black; text-align: center;color:white;">
+	<p style=" padding: 10px;">Copyright © 2018 Global Forum for Urban and Regional Resilience</p>
+</footer>
+</html>
