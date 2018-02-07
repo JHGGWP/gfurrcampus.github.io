@@ -11,12 +11,36 @@ var colorscale = d3.scale.category10();
 //Legend titles
 var LegendOptions = ['School A','School B', "School C", "School D"];
 
+function findat(){
+	//console.log("poop");
+	//var thing = null;
+	return firebase.database().ref("financial_data").once('value').then(function(snapshot){
+		var x = snapshot.val();
+		var list = [];
+		for(var school in x){
+			list.push(
+				[{axis: "Endowment/Student", value: x[school].endowmentPerStudent, school: school},
+				{axis:"Primary Reserves Ratio", value: x[school].primaryReservesRatio, school: school},
+		  		{axis:"Viability Ratio",value: x[school].viabilityRatio,school: school}]
+			);
+		}
+		thing = list;
+		return list;
+	})
+	//console.log(thing);
+}
+var financial_data0 = null;
+//findat().then(result => financial_data0 = result);
+//console.log(findat());
+
 //Data // read from fin_data_fb
-var financial_data0 = [
+//var financial_data0 = findat();
+//console.log(financial_data0);
+/*var financial_data0 = [
 		  [{axis:"Axis 1",value:1000*Math.random(),school:"School A"},
 		  {axis:"Primary Reserves Ratio",value:equate(Math.random(),Math.max(1000*Math.random(),1000*Math.random())),school:"School B"},
 		  {axis:"Viability Ratio",value:equate(Math.random(),Math.max(1000*Math.random(),1000*Math.random())),school:"School C"}]
-		];
+		];*/
 
 //Options for the Radar chart, other than default
 var mycfg = {
@@ -31,6 +55,13 @@ var mycfg = {
 //Will expect that data is in %'s
 
 function drawWithData(target,index){ // chart = #chartA
+	//var financial_data0 = findat();
+	findat().then(result => financial_data0 = result);
+	setTimeout(function(){
+		console.log(financial_data0);
+		console.log("It has been 10 seconds");
+		console.log(target,index);
+
 	document.getElementById(target).style.opacity = 1;
 	var all_div = document.createElement('DIV'); all_div.id = "all";
 	var hr1 = document.createElement('hr'); all_div.appendChild(hr1);
@@ -155,4 +186,4 @@ function drawWithData(target,index){ // chart = #chartA
 	  .attr("fill", "#737373")
 	  .text(function(d) { return d; })
 	  ;	
-}
+},1000)}
