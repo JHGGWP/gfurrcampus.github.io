@@ -210,6 +210,7 @@ app.controller('myCtrl', function($scope) {
     $scope.fin_data = [];
 
     $scope.pullFinData = function(){
+        $scope.setDT(1);
         return firebase.database().ref("financial_data").once('value').then(function(snapshot){
             var x = snapshot.val();
             var list = [];
