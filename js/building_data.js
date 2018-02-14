@@ -219,6 +219,7 @@ app.controller('myCtrl', function($scope) {
                 list.push(x[school]);
             }
             $scope.fin_data = list;
+            return list;
         })
     }
 
