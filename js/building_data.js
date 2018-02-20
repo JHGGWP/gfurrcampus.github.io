@@ -72,7 +72,7 @@ app.controller('myCtrl', function($scope) {
     }
 
     function getUsrRole(obj,key){
-    	if(obj.Role == "Guest (Read-Only)" && key == "isguest"){
+    	if((obj.Role == "Guest (Read-Only)" && key == "isguest")){
     		return true;
     	}else if(obj.Role == "Administrator (Read/Write Access)" && key == "isadmin"){
     		return true;
@@ -96,7 +96,19 @@ app.controller('myCtrl', function($scope) {
       			});
     			// ...
     		});
-  		}});
+  		}
+        else{
+            return firebase.database().ref("/").once('value').then(function(snapshot) {
+                var usr = snapshot.val();
+                $scope.$apply(function(){
+                    $scope.signedInRole.ismaster = false;
+                    $scope.signedInRole.isadmin = false;
+                    $scope.signedInRole.isguest = true;
+                    $scope.CurrentUser = null;
+                });
+                // ...
+            });
+        }});
 	}
 
 	$scope.userID = function(e){
