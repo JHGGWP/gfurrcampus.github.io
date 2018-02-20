@@ -19,9 +19,9 @@
 		<td width="85%" style="white-space:nowrap;">
 			<div style="display:inline;"><img src="../images/header.png" width="500px"></div>
 			<div style="display:inline; white-space:nowrap;font-family: Verdana, Helvetica, sans-serif;position:relative;top:25px;"><!-- Data Visualization & Management Tool -->
-				<i ng-show ="signedInRole.isguest" style="color:#00ace6" class="fa fa-address-card-o" aria-hidden="true"></i>
-				<i ng-show = "signedInRole.isadmin" style="color:#00cc66" class="fa fa-id-card-o" aria-hidden="true"></i>
-				<i ng-show = "signedInRole.ismaster" ng-show ="isguest" style="color:black" class="fa fa-id-card" aria-hidden="true"></i>
+				<i ng-show ="signedInRole.isguest" style="color:#00ace6" class="fa fa-address-card-o" aria-hidden="true" data-toggle="tooltip" title="[Brief description about this item]"></i>
+				<i ng-show = "signedInRole.isadmin" style="color:#00cc66" class="fa fa-id-card-o" aria-hidden="true" data-toggle="tooltip" title="[Brief description about this item]"></i>
+				<i ng-show = "signedInRole.ismaster" ng-show ="isguest" style="color:black" class="fa fa-id-card" aria-hidden="true" data-toggle="tooltip" title="[Brief description about this item]"></i>
 			</div>
 		</td>
 		<td align="right">
@@ -85,10 +85,10 @@
 		<tr>
 			<th width="80%" colspan="4">
 				<div class="btn-group btn-group-justified">
-  					<a href="#" class="btn btn-primary" style="width:15%"><b>Action</b></a>
-  					<a href="#" class="btn btn-primary" style="width:15%"><b>Current</b></a>
-  					<a href="#" class="btn btn-primary" style="width:55%"><b>New</b></a>
-  					<a href="#" class="btn btn-primary" style="width:15%"><b>Submission</b>s</a>
+  					<a href="#" class="btn btn-primary" style="width:15%" data-toggle="tooltip" title="[Brief description about this item]"><b>Action</b></a>
+  					<a href="#" class="btn btn-primary" style="width:15%" data-toggle="tooltip" title="[Brief description about this item]"><b>Current</b></a>
+  					<a href="#" class="btn btn-primary" style="width:55%" data-toggle="tooltip" title="[Brief description about this item]"><b>New</b></a>
+  					<a href="#" class="btn btn-primary" style="width:15%" data-toggle="tooltip" title="[Brief description about this item]"><b>Submission</b>s</a>
 				</div>
 			</th>
 		</tr>
@@ -136,14 +136,14 @@
 		<tr>
 			<th width="75%">
 				<div class="btn-group btn-group-justified">
-  					<a href="#" class="btn btn-primary" style="width:13%">Users</a>
-  					<a href="#" class="btn btn-primary" style="width:20%">Name</a>
-  					<a href="#" class="btn btn-primary" style="width:25%">Role</a>
-  					<a href="#" class="btn btn-primary" style="width:25%">Requested</a>
-  					<a href="#" class="btn btn-primary" style="width:5%">M</a>
-  					<a href="#" class="btn btn-primary" style="width:5%">A</a>
-  					<a href="#" class="btn btn-primary" style="width:5%">G</a>
-  					<a href="#" class="btn btn-primary" style="width:5%"><i class="fa fa-trash" aria-hidden="true"></i></a>
+  					<a href="#" class="btn btn-primary" style="width:13%" data-toggle="tooltip" title="[Brief description about this item]">Users</a>
+  					<a href="#" class="btn btn-primary" style="width:20%" data-toggle="tooltip" title="[Brief description about this item]">Name</a>
+  					<a href="#" class="btn btn-primary" style="width:25%" data-toggle="tooltip" title="[Brief description about this item]">Role</a>
+  					<a href="#" class="btn btn-primary" style="width:25%" data-toggle="tooltip" title="[Brief description about this item]">Requested</a>
+  					<a href="#" class="btn btn-primary" style="width:5%" data-toggle="tooltip" title="[Brief description about this item]">M</a>
+  					<a href="#" class="btn btn-primary" style="width:5%" data-toggle="tooltip" title="[Brief description about this item]">A</a>
+  					<a href="#" class="btn btn-primary" style="width:5%" data-toggle="tooltip" title="[Brief description about this item]">G</a>
+  					<a href="#" class="btn btn-primary" style="width:5%" data-toggle="tooltip" title="[Brief description about this item]"><i class="fa fa-trash" aria-hidden="true"></i></a>
 				</div>
 			</th>
 		</tr>
@@ -168,9 +168,9 @@
 		<tr>
 			<th width="75%">
 				<div class="btn-group btn-group-justified">
-  					<a href="#" class="btn btn-primary" style="width:13%">User</a>
-  					<a href="#" class="btn btn-primary" style="width:85%">Question/Complaint</a>
-  					<a href="#" class="btn btn-primary" style="width:5%"><i class="fa fa-trash" aria-hidden="true"></i></a>
+  					<a href="#" class="btn btn-primary" style="width:13%" data-toggle="tooltip" title="[Brief description about this item]">User</a>
+  					<a href="#" class="btn btn-primary" style="width:85%" data-toggle="tooltip" title="[Brief description about this item]">Question/Complaint</a>
+  					<a href="#" class="btn btn-primary" style="width:5%" data-toggle="tooltip" title="[Brief description about this item]"><i class="fa fa-trash" aria-hidden="true"></i></a>
   				</div>
   			</th>
 		</tr>

@@ -13,6 +13,10 @@ function initMap() {
         });
 }
 
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope) {
 	getCurrentUser();
@@ -69,6 +73,24 @@ app.controller('myCtrl', function($scope) {
 
     $scope.ng_signOut = function(){
     	signOut();
+    }
+
+    $scope.sortedValue = 'universityName';
+    $scope.reverse = false;
+
+    $scope.mySort = function(data) {
+        //console.log(data[$scope.sortedValue]);
+        return data[$scope.sortedValue];
+    };
+
+    $scope.newSort = function(key){
+        if($scope.sortedValue == key){
+            $scope.sortedValue = key;
+            $scope.reverse = !$scope.reverse;
+        }else{
+            $scope.sortedValue = key;
+            $scope.reverse = false;
+        }
     }
 
     function getUsrRole(obj,key){
@@ -227,7 +249,11 @@ app.controller('myCtrl', function($scope) {
             var x = snapshot.val();
             var list = [];
             for(var school in x){
-                //console.log(x[school]);
+                for(var item in x[school]){
+                    if(item != 'universityName'){
+                        x[school][item] = parseFloat(x[school][item]);
+                    }
+                }
                 list.push(x[school]);
             }
             $scope.fin_data = list;
