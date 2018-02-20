@@ -18,9 +18,9 @@
 		<td width="85%" style="white-space:nowrap;">
 			<div style="display:inline;"><img src="images/header.png" width="500px"></div>
 			<div style="display:inline; white-space:nowrap;font-family: Verdana, Helvetica, sans-serif;position:relative;top:25px;"><!-- Data Visualization & Management Tool -->
-				<i ng-show ="signedInRole.isguest" style="color:#00ace6" class="fa fa-address-card-o" aria-hidden="true"></i>
-				<i ng-show = "signedInRole.isadmin" style="color:#00cc66" class="fa fa-id-card-o" aria-hidden="true"></i>
-				<i ng-show = "signedInRole.ismaster" ng-show ="isguest" style="color:black" class="fa fa-id-card" aria-hidden="true"></i>
+				<i ng-show ="signedInRole.isguest" style="color:#00ace6" class="fa fa-address-card-o" aria-hidden="true" data-toggle="tooltip" title="[Brief description about this item]"></i>
+				<i ng-show = "signedInRole.isadmin" style="color:#00cc66" class="fa fa-id-card-o" aria-hidden="true" data-toggle="tooltip" title="[Brief description about this item]"></i>
+				<i ng-show = "signedInRole.ismaster" ng-show ="isguest" style="color:black" class="fa fa-id-card" aria-hidden="true" data-toggle="tooltip" title="[Brief description about this item]"></i>
 			</div>
 		</td>
 		<td align="right">
