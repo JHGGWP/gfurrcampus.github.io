@@ -93,6 +93,7 @@ function createFinancialEntry(univ,endow,stud,fees,grants,state,aux,tnet,rnet,cn
 }
 
 function findat(){
+  LegendOptions = [];
   return firebase.database().ref("financial_data").once('value').then(function(snapshot){
     var x = snapshot.val();
     var list = [];
