@@ -208,7 +208,131 @@
 	<a href="https://github.com/gfurrcampus/gfurrcampus.github.io" target="_blank"><h2 style="font-family: Verdana, Helvetica, sans-serif; font-size: 24px;" align="center"> Repository </h2></a>
 	<br>
 </div>
+<!-- Modal -->
+  <div class="modal fade" id="signupModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Sign Up</h4>
+        </div>
+        <div class="modal-body">
+          <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus leo, consequat vitae orci vel, vulputate dictum dui. Etiam nec erat varius, aliquam massa vitae, dignissim erat. Nunc posuere odio quis diam posuere cursus. Proin a pellentesque ante, mattis luctus nisl. Curabitur leo justo, pharetra et leo at, iaculis consectetur mi. Maecenas faucibus semper lacus eu congue. Fusce non elit accumsan, euismod sapien et, fringilla lectus. Aenean at sagittis sem. Nullam porttitor, leo non rutrum mollis, turpis erat iaculis risus, at suscipit nunc est eget leo. Aliquam scelerisque turpis sed odio efficitur imperdiet sed eu enim. Vestibulum rutrum at elit sed convallis.</p> -->
+          <table width="100%">
+          	<tr>
+          		<th width="20%">First Name</th>
+          		<td width="80%"><input style="width:100%" ng-model="newUser.fn"></input></td>
+          	</tr>
+          	<tr>
+          		<th width="20%">Last Name</th>
+          		<td width="80%"><input style="width:100%" ng-model="newUser.ln"></input></td>
+          	</tr>
+          		<th width="20%">User Name</th>
+          		<td width="80%"><input style="width:100%" ng-model="newUser.u"></input></td>
+          	</tr>
+          	<tr>
+          		<th width="20%">Email Address</th>
+          		<td width="80%"><input style="width:100%" ng-model="newUser.e"></input></td>
+          	</tr>
+          	<tr>
+          		<th width="20%">Password</th>
+          		<td width="80%"><input type="password" style="width:100%" ng-model="newUser.pw"></input></td>
+          	</tr>
+          	<tr>
+          		<th width="20%">Role (Request)</th>
+          		<td>
+          			<select ng-model="newUser.r" ng-options="x for x in roles" style="width:100%">
+					</select>
+          		</td>
+          	</tr>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button"  ng-disabled="!ng_createUserValid()" ng-click="ng_createUser()" class="btn btn-primary" data-dismiss="modal">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 
+  <!-- Modal -->
+  <div class="modal fade" id="loginModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Log In</h4>
+        </div>
+        <div class="modal-body">
+          <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus leo, consequat vitae orci vel, vulputate dictum dui. Etiam nec erat varius, aliquam massa vitae, dignissim erat. Nunc posuere odio quis diam posuere cursus. Proin a pellentesque ante, mattis luctus nisl. Curabitur leo justo, pharetra et leo at, iaculis consectetur mi. Maecenas faucibus semper lacus eu congue. Fusce non elit accumsan, euismod sapien et, fringilla lectus. Aenean at sagittis sem. Nullam porttitor, leo non rutrum mollis, turpis erat iaculis risus, at suscipit nunc est eget leo. Aliquam scelerisque turpis sed odio efficitur imperdiet sed eu enim. Vestibulum rutrum at elit sed convallis.</p> -->
+          <table width="100%">
+          	<tr>
+          		<th width="20%">Email Address</th>
+          		<td width="80%"><input style="width:100%" ng-model="oldUser.e"></input></td>
+          	</tr>
+          	<tr>
+          		<th width="20%">Password</th>
+          		<td width="80%"><input type="password" style="width:100%" ng-model="oldUser.pw"></input></td>
+          	</tr>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" ng-disabled="!ng_signInValid()" ng-click="ng_signIn()" class="btn btn-primary" data-dismiss="modal">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="logoutModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Log Out</h4>
+        </div>
+        <!-- <div class="modal-body"> -->
+          <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus leo, consequat vitae orci vel, vulputate dictum dui. Etiam nec erat varius, aliquam massa vitae, dignissim erat. Nunc posuere odio quis diam posuere cursus. Proin a pellentesque ante, mattis luctus nisl. Curabitur leo justo, pharetra et leo at, iaculis consectetur mi. Maecenas faucibus semper lacus eu congue. Fusce non elit accumsan, euismod sapien et, fringilla lectus. Aenean at sagittis sem. Nullam porttitor, leo non rutrum mollis, turpis erat iaculis risus, at suscipit nunc est eget leo. Aliquam scelerisque turpis sed odio efficitur imperdiet sed eu enim. Vestibulum rutrum at elit sed convallis.</p> -->
+        <!-- </div> -->
+        <div class="modal-footer">
+          <button type="button" ng-click="ng_signOut()" class="btn btn-danger" data-dismiss="modal">Yes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="helpModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Need Help?</h4>
+        </div>
+        <div class="modal-body">
+          <p>Is there any questions or concerns that you've noticed through the use of our tool? Leave a message below and we will address it as soon as possible.</p>
+          <textarea style="width:100%" ng-model="help_request"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
   <br><br>
 </body>
 <footer class="footer" style="background-color:black; text-align: center;color:white;">
